@@ -1,13 +1,23 @@
 import { useState } from "react";
-// import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-// Import logo here; 
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+// Import logo here:
+import Logo from '@/assets/logo.png'; 
+import Link from "./Link";
+import { SelectedPage } from "@/shared/types";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
-type Props = {}
+type Props = {
+    selectedPage: SelectedPage; 
+    setSelectedPage: (value: SelectedPage) => void; 
+}
 
-const Navbar = (props: Props) => {
+const Navbar = ( {selectedPage, setSelectedPage}: Props) => {
 
     const flexBetween = "flex items-center justify-between";
-  
+    {/* Detecting if screen size is above medium using hook: */}
+    const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+    const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+    
     return <nav>
         {/* Outter div to hold outter layer of navbar */}
         <div 
@@ -16,24 +26,54 @@ const Navbar = (props: Props) => {
             {/* Inner div to hold navbar components */}
             <div className={`${flexBetween} mx-auto w-5/6`}>
                 <div className={`${flexBetween} w-full gap-16`}>
+                    
                     {/* Website Logo Left Side*/}
-                    <p> LOGO </p>
+                    <img className={`${flexBetween} w-10 h-10`} src={Logo} alt="logo"/>
+                    
+                    {/* Right Side of Logo */}
+                    {isAboveMediumScreens ? ( 
+                        <>
+                            <div className={`${flexBetween} w-full`}>
+                                <div className={`${flexBetween} gap-8 text-sm`}>
 
-                    {/* Right Side */}
-                    <div className={`${flexBetween} w-full`}>
-                        <div className={`${flexBetween} gap-8 text-sm`}>
-                            <p>Home</p>
-                            <p>About</p>
-                            <p>Projects</p>
-                            <p>Experience</p>
-                            <p>Skills</p>
-    
-                        </div>
-                    </div>
-                    {/* Far Right Side */}
-                    <div className={`${flexBetween} gap-8`}>
-                        <button>Contact Me</button>
-                    </div>
+                                    {/* Links to parts of web-page */}
+                                    <Link page = "Home"
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}/>
+                                    
+                                    <Link page = "About"
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}/>
+
+                                    <Link page = "Projects"
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}/>
+                                                            
+                                    <Link page = "Experience"
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}/>
+                                                    
+                                    <Link page = "Skills"
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}/>
+            
+                                </div>
+                            </div>
+                            
+                            {/* Far Right Side */}
+                            <div className={`${flexBetween} gap-8`}>
+                                <button>Contact Me</button>
+                            </div>
+                        </>
+                    ): (
+                        <button
+                            className="rounded-full bg-purple-400 p-2"
+                            onClick={() => setIsMenuToggled(!isMenuToggled)}
+                        >
+                            <Bars3Icon className="h-6 w-6 text-white" />
+                        </button>
+                        ) 
+                    } 
                 </div>
             </div>
         </div>

@@ -2,6 +2,8 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
 import { SelectedPage } from '@/shared/types';
 import profilePicture from '@/assets/crying_bmochj_cat.png'
+import github from '@/assets/github_logo.png'
+import linkedin from '@/assets/linkedin_logo.png'
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 
@@ -32,11 +34,11 @@ const Home = ( {setSelectedPage }: Props) => {
                             <div className="text-4xl py-5">
                                 <p> I'm Mochj Cat </p>
                             </div>  
-                            
                         </div>
 
                         <p className="mt-4text-md md:text-start">
-                            I'm a undergraduate computer science student at RPI!
+                            I am currently a undergraduate computer science student at RPI! 
+                            I'm actively searching for work opportunities in the tech industry.
                         </p>
                     </div>
 
@@ -47,7 +49,7 @@ const Home = ( {setSelectedPage }: Props) => {
                         </ActionButton>
 
                         <AnchorLink
-                            className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
+                            className="text-sm font-bold text-primary-600 underline hover:text-secondary-500"
                             onClick = {() => setSelectedPage(SelectedPage.Contact)}    
                             href={`#${SelectedPage.Contact}`}
                         >
@@ -66,12 +68,11 @@ const Home = ( {setSelectedPage }: Props) => {
             {/* Personal Links */}
 
             {isAboveMediumScreens && (
-                <div className="h-[150px] w-full bg-primary-100 py-10">
+                <div className="h-[150px] w-full bg-orange-400 py-10">
                     <div className="mx-auto w-5/6 ">
                         <div className="flex w-3/5 items-end gap-8">
-                            <p>Github</p>
-                            <p>LinkedIn</p>
-                            
+                            <a href="https://github.com"><img className="w-10 h-10" src={github} alt="github" /> </a>
+                            <a href="https://linkedin.com"><img className="w-10 h-10" src={linkedin} alt="linkedin" /></a>
                         </div>
                     </div>
                 </div>

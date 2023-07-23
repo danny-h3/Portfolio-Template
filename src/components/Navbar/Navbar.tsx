@@ -21,7 +21,7 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
     {/* When screen size is at the width or lower, a hamburger menu will appear */}
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
     {/* Showing navigation bar if we are not on top of page */}
-    const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+    const navbarBackground = isTopOfPage ? "" : "bg-orange-100g drop-shadow";
     
     return <nav>
         {/* Outter div to hold outter layer of navbar */}
@@ -39,7 +39,7 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
                     {isAboveMediumScreens ? ( 
                         <>
                             <div className={`${flexBetween} w-full`}>
-                                <div className={`${flexBetween} gap-8 text-sm`}>
+                                <div className={`${flexBetween} gap-8 text-lg`}>
 
                                     {/* Links to parts of web-page */}
                                     <Link page = "Home"

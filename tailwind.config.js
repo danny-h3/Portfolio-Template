@@ -6,6 +6,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        fade: 'fadeOut 5s ease-in-out', 
+      },
+      keyframes: theme => ({
+          fadeOut: {
+            '0%': { backgroundColor: theme('colors.red.300') },
+            '100%': { backgroundColor: theme('colors.transparent') },
+          },
+      }), 
+      
       colors: { 
         "gray-20": "#F8F4EB",
         "gray-50": "#EFE6E6",
@@ -16,7 +26,9 @@ module.exports = {
         "primary-500": "#FF6B66",
         "secondary-400": "#FFCD58",
         "secondary-500": "#FFC132",
-        "purple-400": "#8DA2FB"
+        "purple-400": "#8DA2FB",
+        "orange-1z00": "#FDF6B2",
+        "orange-400": "#E3A008"
       },
       backgroundImage: (theme) => ({
         "gradient-yellowred": "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",
@@ -31,6 +43,7 @@ module.exports = {
         // Insert more content here 
 
       }
+
     },
     screens: {
       // Break point for screen size

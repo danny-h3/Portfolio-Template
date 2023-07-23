@@ -7,6 +7,7 @@ function App() {
         SelectedPage.Home 
     );
 
+    {/* Here the app is detecting to see if the user is on top of the screen: */}
     const [istTopOfPage, setIsTopOfPage] = useState<boolean>(true); 
 
     useEffect( () => {
@@ -20,8 +21,8 @@ function App() {
                 setIsTopOfPage(false); 
             }
         }
+        
         window.addEventListener("scroll", handleScroll); 
-
         return () => window.removeEventListener("scroll", handleScroll); 
     }, []);
 

@@ -7,7 +7,8 @@ export enum SelectedPage {
     About = "about",
     Projects = "projects",
     Exerpience = "experience",
-    Skills = "skills"
+    Skills = "skills",
+    Contact = "contactme"
 }
 
 

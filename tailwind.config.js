@@ -15,7 +15,7 @@ module.exports = {
             '100%': { backgroundColor: theme('colors.transparent') },
           },
       }), 
-      
+
       colors: { 
         "gray-20": "#F8F4EB",
         "gray-50": "#EFE6E6",
@@ -41,7 +41,7 @@ module.exports = {
       },
       content: {
         // Insert more content here 
-
+        cstext: "url('./assets/CS.png')"
       }
 
     },

@@ -17,4 +17,5 @@ const useMediaQuery = (query: string) => {
   
     return matches;
   };
+  
 export default useMediaQuery; 

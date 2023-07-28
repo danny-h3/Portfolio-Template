@@ -28,6 +28,7 @@ const Home = ( {setSelectedPage }: Props) => {
                     {/* Headers*/}
                     <div className="md:-mt-20">
                         <div className="relative">
+                            {/* CS background text */}
                             <div className="before:absolute before:-top-20 md:before:content-cstext before:-left-20 before:z-[-1] ">
                                  <p className="text-8xl font-bold"> Hello! </p>
                             </div>

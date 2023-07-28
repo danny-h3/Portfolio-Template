@@ -21,7 +21,7 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
     {/* When screen size is at the width or lower, a hamburger menu will appear */}
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
     {/* Showing navigation bar if we are not on top of page */}
-    const navbarBackground = isTopOfPage ? "" : "bg-orange-100g drop-shadow";
+    const navbarBackground = isTopOfPage ? "" : "bg-orange-100 drop-shadow";
     
     return <nav>
         {/* Outter div to hold outter layer of navbar */}

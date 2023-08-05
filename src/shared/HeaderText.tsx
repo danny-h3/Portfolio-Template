@@ -1,5 +1,3 @@
-import Reat from "react"; 
-
 type Props = {
     children: React.ReactNode; 
 }

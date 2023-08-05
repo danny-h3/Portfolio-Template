@@ -7,15 +7,16 @@ type Props = {
     setSelectedPage: (value: SelectedPage) => void; 
 };
 
+{/* ADD MOBILE VERSION ASAP! */}
 
 const About = ( {setSelectedPage}: Props) => {
   return (
     <section
         id="about"
-        className="mx-auto min-h-full p-10 bg-gray-20"
+        className="mx-auto min-h-full p-10 bg-gray-20 md:flex"
     >
-        <div className="items-center ">
-            <div className="relative">
+        <div className="items-center">
+            <div className="md-flex">
 
                 {/* Greetings */}
                 <div className="px-16 py-20 ">
@@ -25,7 +26,7 @@ const About = ( {setSelectedPage}: Props) => {
                 </div>
 
                 {/* More information about yourself (Totally not from CHAT GPT :P) */}
-                <div className="relative">
+                <div className="md-flex">
                     <div className="px-20 float-left w-3/5">
                         <p className="py-10">
    
@@ -60,12 +61,12 @@ const About = ( {setSelectedPage}: Props) => {
                                 
                         <p> Check Out What I'm Doing </p>
                     </AnchorLink>
-                    
+
                     </div>
 
                     {/* Images */ }
                     <div className="float-left px-20">
-                        <img className="max-w-lg" src={catOnPc} alt="mochj cat chilling" />
+                        <img className="max-w-lg md-flex" src={catOnPc} alt="mochj cat chilling" />
                     </div>
                 </div>
 

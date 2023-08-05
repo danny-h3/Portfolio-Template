@@ -12,4 +12,8 @@ export enum SelectedPage {
 }
 
 
-
+export interface ProjectType {
+    icon: JSX.Element;
+    title: string;
+    description: string;     
+}

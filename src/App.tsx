@@ -5,6 +5,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Experience from "./components/Experience/Experience";
+import Skills from "./components/Skills/Skills";
 
 function App() {
     const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -44,6 +45,8 @@ function App() {
         <Projects setSelectedPage={setSelectedPage}/>
 
         <Experience setSelectedPage={setSelectedPage} />
+
+        <Skills setSelectedPage={setSelectedPage} />
     </div>) ;
 }
 

@@ -1,56 +1,59 @@
+import colors from "tailwindcss/colors"
+
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      animation: {
-        fade: 'fadeOut 5s ease-in-out', 
-      },
-      keyframes: theme => ({
-          fadeOut: {
-            '0%': { backgroundColor: theme('colors.red.300') },
-            '100%': { backgroundColor: theme('colors.transparent') },
-          },
-      }), 
-
-      colors: { 
-        "gray-20": "#F8F4EB",
-        "gray-50": "#EFE6E6",
-        "gray-100": "#DFCCCC",
-        "gray-500": "#5E0000",
-        "primary-100": "#FFE1E0",
-        "primary-300": "#FFA6A3",
-        "primary-500": "#FF6B66",
-        "secondary-400": "#FFCD58",
-        "secondary-500": "#FFC132",
-        "purple-400": "#8DA2FB",
-        "orange-1z00": "#FDF6B2",
-        "orange-400": "#E3A008"
-      },
-      backgroundImage: (theme) => ({
-        "gradient-yellowred": "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",
-         // Insert back ground image for hope page:
-         
-      }),
-      fontFamily: {
-        dmsans: ["DM Sans", "sans-serif"],
-        montserrat: ["Montserrat", "sans-serif"]
-      },
-      content: {
-        // Insert more content here 
-        cstext: "url('./assets/CS.png')"
-      }
-
+    // Font Modifications 
+    fontFamily: {
+      'nunito': ['nunito', 'sans-serif'], 
+      'ubuntu-mono': ['"Ubuntu Mono"', 'mono'],
+      'roboto': ['Roboto', 'sans-serif']
     },
-    screens: {
-      // Break point for screen size
-      xs: "480px",
-      sm: "768px",
-      md: "1060px"
-    }
+    // My Extensions 
+    extend: {
+      // Color Extensions
+      colors: {
+        // Custom color names 
+        dark_cyan: '#083344',
+        light_cyan: '#67e8f9',
+        dark_green: '#166534', 
+        light_green: '#86efac',
+        dark_blue: '#172554',
+        light_blue: '#93c5fd',
+        light_slate: '#94a3b8', 
+        dark_slate: '#0f172a', 
+
+        secondary: {
+          DEFAULT: colors.neutral[200],
+          hover: colors.neutral[300],
+          border: colors.neutral[400],
+          text: colors.neutral[500],
+          dark: colors.neutral[800],
+          ["dark-hover"]: colors.neutral[900]
+        }
+      },
+      // Outline Extensions 
+      outline: {
+        lightblue: '2px solid #38bdf8', 
+      },
+
+      // Animation Extensions
+      keyframes: {
+        pop: {
+          '0%': { transform: 'scale(0)'}, 
+          '100%': { transform: 'scale(1.2)'} 
+        }
+      },
+      animation: {
+        'pop-up': 'pop 2s ease-in-out',
+      }
+    },
   },
   plugins: [],
 }

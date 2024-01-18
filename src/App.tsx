@@ -1,57 +1,31 @@
-import Navbar from "@/components/Navbar/Navbar";
-import { useEffect, useState } from "react";
-import { SelectedPage } from "./shared/types";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import Experience from "./components/Experience/Experience";
-import Skills from "./components/Skills/Skills";
-import ContactMe from "./components/Contact/ContactMe";
+import { PageHeader } from "./layouts/PageHeader"
+import { SideBar } from "./layouts/SideBar"
+import { HomePage } from "./layouts/HomePage"
+import { ExperiencePage } from "./layouts/ExperiencePage"
+import { ProjectsPage } from "./layouts/ProjectsPage"
+import { SkillsPage } from "./layouts/SkillsPage"
 
-function App() {
-    const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-        SelectedPage.Home 
-    );
 
-    {/* Here the app is detecting to see if the user is on top of the screen: */}
-    const [istTopOfPage, setIsTopOfPage] = useState<boolean>(true); 
-
-    useEffect( () => {
-        const handleScroll = () => {
-            if(window.scrollY === 0) {
-                setIsTopOfPage(true);
-                setSelectedPage(SelectedPage.Home); 
-            }
-
-            if(window.scrollY !== 0) {
-                setIsTopOfPage(false); 
-            }
-        }
-        
-        window.addEventListener("scroll", handleScroll); 
-        return () => window.removeEventListener("scroll", handleScroll); 
-    }, []);
-
+export default function App() {
     return (
-    <div className="app bg-gray-20">
-        <Navbar
-            isTopOfPage={istTopOfPage}
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage} />
-            
-        <Home setSelectedPage={setSelectedPage}/>
+        <div className="flex flex-col w-full h-full bg-dark_slate ">
+            {/* Page Header/ Navigation Bar [ Stuck on top of page ] */}
+            <PageHeader />
     
-        <About setSelectedPage={setSelectedPage} />
+            {/* Side Bar + Scrollable Information Page */}
+            <div className="flex h-full overflow-hidden">
+                {/* Side bar w/ social media links */}
+                <SideBar />
 
-        <Projects setSelectedPage={setSelectedPage}/>
-
-        <Experience setSelectedPage={setSelectedPage} />
-
-        <Skills setSelectedPage={setSelectedPage} />
-
-        <Skills setSelectedPage={setSelectedPage} />
-
-    </div>) ;
+                {/* Scrollable information page */}
+                <div className="flex-grow h-full p-4 overflow-y-auto custom-scrollbar">
+                    <HomePage />
+                    <ExperiencePage />
+                    <ProjectsPage />
+                    <SkillsPage />
+                </div>
+            </div>
+        </div>
+       
+    )
 }
-
-export default App; 

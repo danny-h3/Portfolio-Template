@@ -21,8 +21,7 @@ To set up the portfolio template on your local machine, follow these steps:
 4. Start the development server by running:
 
    ```
-   bash
-   npm run dev  
+   bash$: npm run dev  
    ```
 
 ## Project Structure 
@@ -70,8 +69,7 @@ From there you can navigate to each individual layout and then to the components
 When you're ready to build the portfolio for production, run:
 
     ``` 
-    bash
-    npm run build
+    bash$: npm run build
     ```
 
 This command creates a dist directory with optimized files ready for deployment.

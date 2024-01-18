@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react"
-import { SideBarItem } from '../components/SidebarItem'
+import { SideBarItem } from '../components/SideBarItem'
 
 /* 
     COMPONENT: SideBar
